@@ -4,6 +4,7 @@ const trips = [
     destination: "Tokyo, Japan",
     startDate: "2024-10-15",
     endDate: "2024-10-25",
+    image : "tokyo.jpg",
     participants: [
       {
         id: 1,
@@ -108,6 +109,7 @@ const trips = [
     destination: "Paris, France",
     startDate: "2024-12-01",
     endDate: "2024-12-08",
+    image : "parigi.jpg",
     participants: [
       {
         id: 1,
@@ -196,6 +198,7 @@ const trips = [
     destination: "Machu Picchu, Peru",
     startDate: "2025-05-10",
     endDate: "2025-05-22",
+    image : "machu.jpg",
     participants: [
       {
         id: 1,
@@ -324,6 +327,7 @@ const trips = [
     destination: "Zanzibar, Tanzania",
     startDate: "2025-08-05",
     endDate: "2025-08-15",
+    image : "zanzibar.jpg",
     participants: [
       {
         id: 1,
