@@ -4,7 +4,7 @@ function TravelCard({ trip }) {
     const { id, destination, startDate, endDate } = trip;
 
     return (
-        <Link to={`/${id}`} className="text-decoration-none text-dark">
+        <Link to={`/travels/${id}`} className="text-decoration-none text-dark">
             <div className="card mb-3" style={{ maxWidth: 540 }}>
                 <div className="row g-0">
                     <div className="col-md-4">
