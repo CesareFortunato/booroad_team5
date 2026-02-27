@@ -416,3 +416,5 @@ const trips = [
     ],
   },
 ];
+
+export default tripsArray;
