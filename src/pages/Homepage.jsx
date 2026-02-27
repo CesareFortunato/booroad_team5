@@ -10,10 +10,13 @@ function HomePage() {
 
             {/* logica del map  */}
             <section className="d-flex flex-column align-items-center gap-3">
-                {/* Map  */}
-                <TravelCard/>
+                {trips.map((trip) => (
+                    <div className="w-100" style={{ maxWidth: "600px" }} key={trip.id}>
+                        <TravelCard trip={trip} />
+                    </div>
+                ))}
             </section>
         </div>
     )
 }
-export default HomePage
+export default HomePage;
