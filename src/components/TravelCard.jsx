@@ -6,6 +6,19 @@ function TravelCard({ trip }) {
     const { destination, startDate, endDate } = trip;
 
     return (
+<<<<<<< HEAD
+=======
+        <Link to={`/travels/${id}`} className="text-decoration-none text-dark">
+            <div className="card mb-3" style={{ maxWidth: 540 }}>
+                <div className="row g-0">
+                    <div className="col-md-4">
+                        <img
+                            src="https://picsum.photos/300/200?random=1"
+                            className="img-fluid rounded-start"
+                            alt={destination}
+                        />
+                    </div>
+>>>>>>> 060173560cf5efe62ac15f55fedb5d968641a3b9
 
         <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
