@@ -5,20 +5,21 @@ import trips from "../data/tripsArray";
 function TravelDetailPage() {
   const { id } = useParams();
   const currentTrip = trips.find((trip) => trip.id == id);
-
   if (!currentTrip) return <div>Viaggio non trovato.</div>;
 
-  return (
-    <div style={{ padding: "20px" }}>
-      <h1>Dettaglio Viaggio: {currentTrip.destination}</h1>
-      <h3>Partecipanti:</h3>
+  function renderParticipants() {
+    return currentTrip.participants.map((participant) => {
+      return (
+        <TravelerCard participantProp={participant} key={participant.id} />
+      );
+    });
+  }
 
-      {/* Mappiamo direttamente qui per semplicità e velocità */}
-      {currentTrip.participants.map((participant) => (
-        <TravelerCard key={participant.id} participantProp={participant} />
-      ))}
+  return (
+    <div>
+      <h1>Dettaglio Viaggio: {currentTrip.destination}</h1>
+      <h3>Partecipanti:{renderParticipants()}</h3>
     </div>
   );
 }
-
 export default TravelDetailPage;
