@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 import DefaultLayout from "./layouts/DefaultLayout"
-import Homepage from "./pages/Homepage"
+import HomePage from "./pages/HomePage"
 import TravelDetailPage from "./pages/TravelDetailPage"
 
 
@@ -11,10 +11,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<DefaultLayout />}>
-
-          <Route path="/" element={<Homepage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/travels/:id" element={<TravelDetailPage />} />
-
         </Route>
       </Routes>
     </BrowserRouter>
