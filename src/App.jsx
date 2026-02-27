@@ -1,12 +1,24 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
+import DefaultLayout from "./layouts/DefaultLayout"
+import HomePage from "./pages/HomePage"
+import TravelDetailPage from "./pages/TravelDetailPage"
+
+
+
 function App() {
   return (
-    <>
-      <h1>Alessiaaaaaaaaa</h1>
-      <h2>claaa</h2>
-      <h2>cesare</h2>
-      <h2>Giuseppe </h2>
-    </>
-  );
+    <BrowserRouter>
+      <Routes>
+        <Route element={<DefaultLayout />}>
+
+          <Route path="/" element={<HomePage />} />
+          <Route path="/travels/:id" element={<TravelDetailPage />} />
+
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
