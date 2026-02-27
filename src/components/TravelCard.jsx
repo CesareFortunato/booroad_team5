@@ -1,16 +1,16 @@
-
+import { Link } from "react-router-dom";
 
 function TravelCard({ trip }) {
 
     //destructuring 
-    const { destination, startDate, endDate, image  } = trip;
+    const { destination, startDate, endDate } = trip;
 
     return (
 
         <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
                 <div class="col-md-4">
-                    <img src={`/images/${image}`} class="img-fluid rounded-start" alt="..." />
+                    <img src="..." class="img-fluid rounded-start" alt="..." />
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -36,4 +36,4 @@ function TravelCard({ trip }) {
     )
 }
 
-export default TravelCard
+export default TravelCard;
