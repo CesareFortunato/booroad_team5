@@ -1,37 +1,34 @@
 import { Link } from "react-router-dom";
 
 function TravelCard({ trip }) {
-  const { id, destination, startDate, endDate } = trip;
+  const { id, destination, startDate, endDate, image } = trip;
 
   return (
     <Link to={`/travels/${id}`} className="text-decoration-none text-dark">
-      <div className="card mb-3" style={{ maxWidth: 540 }}>
-        <div className="row g-0">
-          <div className="col-md-4">
-            <img
-              src="https://picsum.photos/300/200?random=1"
-              className="img-fluid rounded-start"
-              alt={destination}
-            />
-          </div>
+      <div className="card border-0 shadow-sm overflow-hidden travel-card " >
+        
+        <img
+          src={`/images/${image}`}
+          className="card-img-top"
+          alt={destination}
+          style={{ height: 280, objectFit: "cover" }}
+        />
 
-          <div className="col-md-8">
-            <div className="card-body">
-              <h5 className="card-title">{destination}</h5>
+        
+        <div className="card-body ">
+          <h5 className="card-title ">{destination}</h5>
 
-              <p className="card-text mb-1">
-                <small className="text-body-secondary">
-                  <strong>Inizio:</strong> {startDate}
-                </small>
-              </p>
+          <p className="card-text mb-1">
+            <small className="text-body-secondary">
+              <strong>Inizio:</strong> {startDate}
+            </small>
+          </p>
 
-              <p className="card-text mb-0">
-                <small className="text-body-secondary">
-                  <strong>Fine:</strong> {endDate}
-                </small>
-              </p>
-            </div>
-          </div>
+          <p className="card-text mb-0">
+            <small className="text-body-secondary">
+              <strong>Fine:</strong> {endDate}
+            </small>
+          </p>
         </div>
       </div>
     </Link>

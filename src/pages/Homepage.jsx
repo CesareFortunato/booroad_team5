@@ -5,6 +5,7 @@ function HomePage() {
 
     return (
 
+        <div className="home-bg">
         <div className="container py-4">
             <h1 className="mb-4 text-center">I tuoi viaggi</h1>
 
@@ -16,6 +17,7 @@ function HomePage() {
                     </div>
                 ))}
             </section>
+        </div>
         </div>
     )
 }
