@@ -16,10 +16,20 @@ function TravelDetailPage() {
   }
 
   return (
-    <div>
-      <h1>Dettaglio Viaggio: {currentTrip.destination}</h1>
-      <h3>Partecipanti:{renderParticipants()}</h3>
-    </div>
+    <>
+      <img
+        className="image-detail"
+        src={`../public/images/${currentTrip.image}`}
+        alt={`${currentTrip.destination}`}
+      />
+      <div className="flex-column d-flex justify-content-center">
+        <h1>{currentTrip.destination}</h1>
+        <h6>
+          {currentTrip.startDate}-{currentTrip.endDate}
+        </h6>
+        <div>Partecipanti:{renderParticipants()}</div>
+      </div>
+    </>
   );
 }
 export default TravelDetailPage;
