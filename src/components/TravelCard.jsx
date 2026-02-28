@@ -4,34 +4,27 @@ function TravelCard({ trip }) {
   const { id, destination, startDate, endDate, image } = trip;
 
   return (
-    <Link to={`/travels/${id}`} className="text-decoration-none text-dark">
-      <div className="card border-0 shadow-sm overflow-hidden travel-card " >
-        
-        <img
-          src={`/images/${image}`}
-          className="card-img-top"
-          alt={destination}
-          style={{ height: 280, objectFit: "cover" }}
-        />
+  <Link to={`/travels/${id}`} className="text-decoration-none">
+  <div className="travel-hero-card">
+    <img
+      src={`/images/${image}`}
+      alt={destination}
+      className="travel-hero-card_img"
+    />
 
-        
-        <div className="card-body ">
-          <h5 className="card-title ">{destination}</h5>
+    <div className="travel-hero-card_overlay">
+      <div className="travel-hero-card_content">
+        <h5 className="travel-hero-card_title">{destination}</h5>
 
-          <p className="card-text mb-1">
-            <small className="text-body-secondary">
-              <strong>Inizio:</strong> {startDate}
-            </small>
-          </p>
-
-          <p className="card-text mb-0">
-            <small className="text-body-secondary">
-              <strong>Fine:</strong> {endDate}
-            </small>
-          </p>
-        </div>
+        <p className="travel-hero-card_dates">
+          <span><strong>Inizio:</strong> {startDate}</span>
+          <span className="mx-2">•</span>
+          <span><strong>Fine:</strong> {endDate}</span>
+        </p>
       </div>
-    </Link>
+    </div>
+  </div>
+</Link>
   );
 }
 
