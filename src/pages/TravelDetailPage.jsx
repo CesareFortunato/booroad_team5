@@ -104,9 +104,16 @@ function TravelDetailPage() {
           )}
         </div>
 
+        {/* Bottone indietro */}
+        <div className="text-center mt-4">
+          <Link to="/" className="btn btn-primary trip_card_btn">
+            Torna alla home
+          </Link>
+        </div>
+
         {/* Form per aggiungere partecipante */}
-        <div className="card p-3 mb-4 mt-5 w-80 mx-auto"
-        style={{ maxWidth: "1100px" }}>
+        <div className=" text-center card p-3 mb-4 mt-5 w-80 mx-auto"
+          style={{ maxWidth: "1100px" }}>
           <h5 className="title_form">Aggiungi partecipante</h5>
 
           <input
@@ -173,19 +180,14 @@ function TravelDetailPage() {
           />
 
           <button
-            className="btn btn-success btn_subtmit"
+            className="btn btn-success btn_subtmit "
             onClick={handleAddParticipant}
           >
             Aggiungi
           </button>
         </div>
 
-        {/* Bottone indietro */}
-        <div className="text-center mt-4">
-          <Link to="/" className="btn btn-primary trip_card_btn">
-            Indietro
-          </Link>
-        </div>
+
       </div>
     </>
   );
