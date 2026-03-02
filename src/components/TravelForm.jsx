@@ -13,7 +13,7 @@ function TravelForm({ onAdd }) {
       destination,
       startDate,
       endDate,
-      image: imageFile,
+      image: "default.jpg",
       participants: [],
     });
 
