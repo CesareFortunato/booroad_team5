@@ -4,7 +4,6 @@ import TravelerCard from "../components/TravelerCard";
 import trips from "../data/tripsArray";
 import { Link } from "react-router-dom";
 
-
 function TravelDetailPage() {
   const { id } = useParams();
   const currentTrip = trips.find((trip) => trip.id == id);
@@ -23,36 +22,6 @@ function TravelDetailPage() {
   });
 
   return (
-<<<<<<< HEAD
-    <div className="container py-4">
-      <h1>Dettaglio Viaggio: {currentTrip.destination}</h1>
-
-      {/* Search Bar */}
-      <div className="my-4">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Cerca partecipante..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-      </div>
-
-      {/* Lista partecipanti */}
-      <div className="d-flex flex-column gap-2">
-        {filteredParticipants.length === 0 ? (
-          <div className="alert alert-warning">
-            Nessun partecipante trovato.
-          </div>
-        ) : (
-          filteredParticipants.map((participant) => (
-            <TravelerCard participantProp={participant} key={participant.id} />
-          ))
-        )}
-      </div>
-    </div>
-=======
-
     <>
       <section className="trip-hero-card">
         <img
@@ -68,15 +37,15 @@ function TravelDetailPage() {
               {currentTrip.startDate} / {currentTrip.endDate}
             </p>
           </div>
-
         </div>
 
         {/*<div>Partecipanti:{renderParticipants()}</div>*/}
       </section>
 
-
       <div className="container py-4">
-        <h1 className="mb-4 text-center card_detail_title">Lista partecipanti</h1>
+        <h1 className="mb-4 text-center card_detail_title">
+          Lista partecipanti
+        </h1>
 
         {/* Search Bar */}
         <div className="my-4 traveler-card">
@@ -111,7 +80,6 @@ function TravelDetailPage() {
         </div>
       </div>
     </>
->>>>>>> 9bc8ac513d88f70593becc14c06fcea0739a23c3
   );
 }
 
