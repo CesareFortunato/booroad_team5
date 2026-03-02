@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 
 function TravelDetailPage() {
+
   const { id } = useParams();
   const currentTrip = trips.find((trip) => trip.id == id);
 
