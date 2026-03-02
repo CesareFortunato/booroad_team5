@@ -37,7 +37,7 @@ function TravelDetailPage() {
   const handleAddParticipant = () => {
     const participantToAdd = {
       ...newParticipant,
-      id: participants.length + 1,
+      id: Date.now()
     };
 
     setParticipants([...participants, participantToAdd]);
