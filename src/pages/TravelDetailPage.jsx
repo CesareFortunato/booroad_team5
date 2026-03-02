@@ -21,22 +21,6 @@ function TravelDetailPage() {
   });
 
   return (
-<<<<<<< HEAD
-    <>
-      <img
-        className="image-detail"
-        src={`../public/images/${currentTrip.image}`}
-        alt={`${currentTrip.destination}`}
-      />
-      <div className="flex-column d-flex justify-content-center">
-        <h1>{currentTrip.destination}</h1>
-        <h6>
-          {currentTrip.startDate}-{currentTrip.endDate}
-        </h6>
-        <div>Partecipanti:{renderParticipants()}</div>
-      </div>
-    </>
-=======
     <div className="container py-4">
       <h1>Dettaglio Viaggio: {currentTrip.destination}</h1>
 
@@ -59,15 +43,11 @@ function TravelDetailPage() {
           </div>
         ) : (
           filteredParticipants.map((participant) => (
-            <TravelerCard
-              participantProp={participant}
-              key={participant.id}
-            />
+            <TravelerCard participantProp={participant} key={participant.id} />
           ))
         )}
       </div>
     </div>
->>>>>>> 1cac2c2a006a368d312248373449c3d7de0b4b76
   );
 }
 
