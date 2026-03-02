@@ -11,7 +11,6 @@ function HomePage() {
       ...newTripData,
       id: tripsList.length + 1,
     };
-
     setTripsList([...tripsList, newTrip]);
   };
 

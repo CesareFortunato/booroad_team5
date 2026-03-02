@@ -8,12 +8,13 @@ function TravelForm({ onAdd }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(imageFile);
 
     onAdd({
       destination,
       startDate,
       endDate,
-      image: "default.jpg",
+      image: imageFile,
       participants: [],
     });
 
@@ -49,7 +50,7 @@ function TravelForm({ onAdd }) {
           type="file"
           className="form-control"
           accept="image/*"
-          onChange={(e) => setImageFile(e.target.files[0])}
+          onChange={(e) => setImageFile(e.target.files[0].name)}
         />
       </div>
 
