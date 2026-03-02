@@ -10,10 +10,12 @@ function TravelDetailPage() {
   const { id } = useParams();
   const currentTrip = trips.find((trip) => trip.id == id);
 
+  if (!currentTrip) {
+    return <div className="container py-4">Viaggio non trovato.</div>;
+  }
+
   const [search, setSearch] = useState("");
-
   const [participants, setParticipants] = useState(currentTrip.participants);
-
   // State per il form
   const [newParticipant, setNewParticipant] = useState({
     firstName: "",
@@ -23,10 +25,6 @@ function TravelDetailPage() {
     taxCode: "",
     emergencyContact: ""
   });
-
-  if (!currentTrip) {
-    return <div className="container py-4">Viaggio non trovato.</div>;
-  }
 
   const query = search.trim().toLowerCase();
 
