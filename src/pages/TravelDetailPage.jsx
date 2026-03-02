@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import TravelerCard from "../components/TravelerCard";
 import trips from "../data/tripsArray";
 import { Link } from "react-router-dom";
+
+
 function TravelDetailPage() {
   const { id } = useParams();
   const currentTrip = trips.find((trip) => trip.id == id);
@@ -74,9 +76,9 @@ function TravelDetailPage() {
           )}
         </div>
         <div className="text-center mt-4">
-        <Link to="/" className="btn btn-primary trip_card_btn">
-          Indietro
-        </Link>
+          <Link to="/" className="btn btn-primary trip_card_btn">
+            Indietro
+          </Link>
         </div>
       </div>
     </>
