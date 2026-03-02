@@ -11,48 +11,50 @@ function TravelDetailPage() {
 
   const [search, setSearch] = useState("");
 
+  const [participants, setParticipants] = useState(currentTrip.participants);
+
+  // State per il form
+  const [newParticipant, setNewParticipant] = useState({
+    firstName: "",
+    lastName: "",
+    phoneNumber: "",
+    email: "",
+    taxCode: "",
+    emergencyContact: ""
+  });
+
   if (!currentTrip) {
     return <div className="container py-4">Viaggio non trovato.</div>;
   }
 
   const query = search.trim().toLowerCase();
 
-  const filteredParticipants = currentTrip.participants.filter((p) => {
+  const filteredParticipants = participants.filter((p) => {
     const fullName = `${p.firstName} ${p.lastName}`.toLowerCase();
     return fullName.includes(query);
   });
 
+  // Funzione per aggiungere partecipante
+  const handleAddParticipant = () => {
+    const participantToAdd = {
+      ...newParticipant,
+      id: participants.length + 1,
+    };
+
+    setParticipants([...participants, participantToAdd]);
+
+    setNewParticipant({
+      firstName: "",
+      lastName: "",
+      phoneNumber: "",
+      email: "",
+      taxCode: "",
+      emergencyContact: ""
+    });
+  };
+
+
   return (
-<<<<<<< HEAD
-    <div className="container py-4">
-      <h1>Dettaglio Viaggio: {currentTrip.destination}</h1>
-
-      {/* Search Bar */}
-      <div className="my-4">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Cerca partecipante..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-      </div>
-
-      {/* Lista partecipanti */}
-      <div className="d-flex flex-column gap-2">
-        {filteredParticipants.length === 0 ? (
-          <div className="alert alert-warning">
-            Nessun partecipante trovato.
-          </div>
-        ) : (
-          filteredParticipants.map((participant) => (
-            <TravelerCard participantProp={participant} key={participant.id} />
-          ))
-        )}
-      </div>
-    </div>
-=======
-
     <>
       <section className="trip-hero-card">
         <img
@@ -68,10 +70,8 @@ function TravelDetailPage() {
               {currentTrip.startDate} / {currentTrip.endDate}
             </p>
           </div>
-
         </div>
 
-        {/*<div>Partecipanti:{renderParticipants()}</div>*/}
       </section>
 
 
@@ -104,6 +104,83 @@ function TravelDetailPage() {
             ))
           )}
         </div>
+
+        {/* Form per aggiungere partecipante */}
+        <div className="card p-3 mb-4 mt-5 w-50 mx-auto">
+          <h5>Aggiungi partecipante</h5>
+
+          <input
+            type="text"
+            placeholder="Nome"
+            className="form-control mb-2"
+            value={newParticipant.firstName}
+            onChange={(e) =>
+              setNewParticipant({ ...newParticipant, firstName: e.target.value })
+            }
+          />
+
+          <input
+            type="text"
+            placeholder="Cognome"
+            className="form-control mb-2"
+            value={newParticipant.lastName}
+            onChange={(e) =>
+              setNewParticipant({ ...newParticipant, lastName: e.target.value })
+            }
+          />
+
+          <input
+            type="text"
+            placeholder="Telefono"
+            className="form-control mb-2"
+            value={newParticipant.phoneNumber}
+            onChange={(e) =>
+              setNewParticipant({ ...newParticipant, phoneNumber: e.target.value })
+            }
+          />
+
+          <input
+            type="email"
+            placeholder="Email"
+            className="form-control mb-2"
+            value={newParticipant.email}
+            onChange={(e) =>
+              setNewParticipant({ ...newParticipant, email: e.target.value })
+            }
+          />
+
+          <input
+            type="text"
+            placeholder="Codice Fiscale"
+            className="form-control mb-2"
+            value={newParticipant.taxCode}
+            onChange={(e) =>
+              setNewParticipant({ ...newParticipant, taxCode: e.target.value })
+            }
+          />
+
+          <input
+            type="text"
+            placeholder="Contatto Emergenza"
+            className="form-control mb-3"
+            value={newParticipant.emergencyContact}
+            onChange={(e) =>
+              setNewParticipant({
+                ...newParticipant,
+                emergencyContact: e.target.value,
+              })
+            }
+          />
+
+          <button
+            className="btn btn-success"
+            onClick={handleAddParticipant}
+          >
+            Aggiungi
+          </button>
+        </div>
+
+        {/* Bottone indietro */}
         <div className="text-center mt-4">
           <Link to="/" className="btn btn-primary trip_card_btn">
             Indietro
@@ -111,7 +188,6 @@ function TravelDetailPage() {
         </div>
       </div>
     </>
->>>>>>> 9bc8ac513d88f70593becc14c06fcea0739a23c3
   );
 }
 
