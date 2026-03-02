@@ -105,8 +105,9 @@ function TravelDetailPage() {
         </div>
 
         {/* Form per aggiungere partecipante */}
-        <div className="card p-3 mb-4 mt-5 w-50 mx-auto">
-          <h5>Aggiungi partecipante</h5>
+        <div className="card p-3 mb-4 mt-5 w-80 mx-auto"
+        style={{ maxWidth: "1100px" }}>
+          <h5 className="title_form">Aggiungi partecipante</h5>
 
           <input
             type="text"
@@ -172,7 +173,7 @@ function TravelDetailPage() {
           />
 
           <button
-            className="btn btn-success"
+            className="btn btn-success btn_subtmit"
             onClick={handleAddParticipant}
           >
             Aggiungi

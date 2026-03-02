@@ -29,9 +29,9 @@ function TravelForm({ onAdd }) {
     <form
       onSubmit={handleSubmit}
       className="p-4 border rounded bg-white shadow-sm w-100"
-      style={{ maxWidth: "600px" }}
+      style={{ maxWidth: "530px" }}
     >
-      <h3 className="mb-3">Aggiungi nuovo viaggio</h3>
+      <h3 className="mb-3 title_form">Aggiungi nuovo viaggio</h3>
 
       <div className="mb-3">
         <label className="form-label">Destinazione</label>
@@ -77,7 +77,7 @@ function TravelForm({ onAdd }) {
         </div>
       </div>
 
-      <button type="submit" className="btn btn-success w-100">
+      <button type="submit" className="btn  w-100 btn_subtmit">
         Salva Viaggio
       </button>
     </form>
